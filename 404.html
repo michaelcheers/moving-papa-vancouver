@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Moving Papa Vancouver — Trusted Movers</title>
+  <meta name="description" content="Vancouver's licensed, insured residential and commercial movers."/>
+  <meta name="robots" content="noindex,nofollow"/>
+  <link rel="canonical" href="https://www.movingpapa.com/vancouver/"/>
+  <link rel="icon" href="https://www.movingpapa.com/favicon.ico"/>
+  <script>
+    (function () {
+      var MAIN = "https://www.movingpapa.com";
+      var CITY = "/vancouver";
+      // Pages that exist on the main domain under /<city>/* — generated
+      // at build time from the contents of the main repo's <city>/ folder.
+      var KNOWN = new Set([
+      "/",
+      "/areas-of-service",
+      "/blog",
+      "/blog/hiring-local-toronto-movers",
+      "/blog/save-money-toronto-move-without-cutting-corners",
+      "/blog/top-5-mistakes-hiring-moving-company-toronto",
+      "/callback",
+      "/commercial",
+      "/company",
+      "/finalstep/commercial",
+      "/finalstep/residential",
+      "/finalstep/storage",
+      "/privacy-policy",
+      "/reviews",
+      "/service/art",
+      "/service/lastmile",
+      "/service/office",
+      "/service/packing",
+      "/service/residential",
+      "/service/specialEquipment",
+      "/service/storage",
+      "/service/warehouse",
+      "/terms-and-condition",
+      "/thankyou"
+    ]);
+
+      function normalize(p) {
+        if (!p || p === '/') return '/';
+        return p.endsWith('/') && p.length > 1 ? p.slice(0, -1) : p;
+      }
+
+      var loc = window.location;
+      var pathname = normalize(loc.pathname);
+      var suffix = (loc.search || '') + (loc.hash || '');
+
+      if (KNOWN.has(pathname)) {
+        // Page exists under /<city>/* → redirect there with the prefix.
+        var p = pathname === '/' ? '' : pathname;
+        loc.replace(MAIN + CITY + p + suffix);
+      } else {
+        // Not a city-specific page → fall back to the main domain root.
+        loc.replace(MAIN + (pathname === '/' ? '/' : pathname) + suffix);
+      }
+    })();
+  </script>
+</head>
+<body></body>
+</html>
